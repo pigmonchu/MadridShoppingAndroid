@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:id="@+id/row_shop__shop_cell"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:src="@android:drawable/btn_star_big_on"
+        android:alpha="0.4"
+        android:id="@+id/row_shop__background_shop"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        tools:text="Kortefiel - Preciados"
+        android:id="@+id/row_shop__shop_name"
+        style="@style/row_shop__shop_name" />
+
+    <TextView
+        android:layout_width="match_parent"
+        tools:text="Horario de apertura"
+        android:id="@+id/row_shop__opening_time"
+        style="@style/row_shop__opening_time" />
+    <ImageView
+        tools:src="@android:drawable/alert_dark_frame"
+        android:id="@+id/row_shop__icon_shop"
+        style="@style/row_shop__icon_shop" />
+
+
+</RelativeLayout>
