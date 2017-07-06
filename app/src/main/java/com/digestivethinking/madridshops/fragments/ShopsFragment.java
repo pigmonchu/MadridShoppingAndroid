@@ -2,20 +2,27 @@ package com.digestivethinking.madridshops.fragments;
 
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.digestivethinking.madridshops.R;
+import com.digestivethinking.madridshops.adapters.ShopsAdapter;
+import com.digestivethinking.madridshops.domain.model.Shop;
+import com.digestivethinking.madridshops.domain.model.Shops;
+import com.digestivethinking.madridshops.views.OnElementClick;
 
 
 public class ShopsFragment extends Fragment {
 
     private RecyclerView shopsRecyclerView;
-
+    private ShopsAdapter adapter;
+    private Shops shops;
 
     public ShopsFragment() {
         // Required empty public constructor
@@ -32,9 +39,21 @@ public class ShopsFragment extends Fragment {
         shopsRecyclerView = (RecyclerView) view.findViewById(R.id.fragment_shops__recycler_view);
         shopsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        //TODO: pass adapter
-
         return view;
+    }
+
+    public void setShops(Shops shops) {
+        this.shops = shops;
+
+        adapter = new ShopsAdapter(shops, getActivity());
+        shopsRecyclerView.setAdapter(adapter);
+
+        adapter.setOnClickListener(new OnElementClick<Shop>() {
+            @Override
+            public void clickedOn(@NonNull Shop shop, int position) {
+                Log.d("Click", shop.getName());
+            }
+        });
     }
 
 }

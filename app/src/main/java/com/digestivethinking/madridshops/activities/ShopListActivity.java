@@ -9,13 +9,18 @@ import com.digestivethinking.madridshops.domain.interactors.GetAllShopsInteracto
 import com.digestivethinking.madridshops.domain.interactors.GetAllShopsInteractorFakeImplementation;
 import com.digestivethinking.madridshops.domain.interactors.InteractorErrorCompletion;
 import com.digestivethinking.madridshops.domain.model.Shops;
+import com.digestivethinking.madridshops.fragments.ShopsFragment;
 
 public class ShopListActivity extends AppCompatActivity {
+
+    private ShopsFragment shopsFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop_list);
+
+        shopsFragment = (ShopsFragment) getSupportFragmentManager().findFragmentById(R.id.activity_shop_list__fragment_shops);
 
         // obtain shops list
         GetAllShopsInteractor getAllShopsInteractor = new GetAllShopsInteractorFakeImplementation();
@@ -24,7 +29,7 @@ public class ShopListActivity extends AppCompatActivity {
                 new GetAllShopsInteractorCompletion() {
                                           @Override
                                           public void completion(Shops shops) {
-                                              System.out.println("Hello Hello");
+                                              shopsFragment.setShops(shops);
                                           }
                                       },
                 new InteractorErrorCompletion() {

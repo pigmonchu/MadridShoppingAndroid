@@ -16,7 +16,7 @@
     </style>
 
     <style name="row_shop__shop_name">
-        <item name="android:layout_height">20dp</item>
+        <item name="android:layout_height">24dp</item>
         <item name="android:layout_marginLeft">60dp</item>
         <item name="android:layout_marginRight">@dimen/standard_margin</item>
         <item name="android:layout_marginTop">@dimen/standard_margin</item>
@@ -24,7 +24,7 @@
     </style>
 
     <style name="row_shop__opening_time">
-        <item name="android:layout_height">20dp</item>
+        <item name="android:layout_height">24dp</item>
         <item name="android:layout_marginTop">4dp</item>
         <item name="android:layout_marginLeft">60dp</item>
         <item name="android:layout_marginRight">@dimen/standard_margin</item>

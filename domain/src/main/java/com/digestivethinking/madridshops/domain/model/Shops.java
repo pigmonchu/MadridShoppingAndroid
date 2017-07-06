@@ -20,7 +20,7 @@ public class Shops implements ShopsIterable, ShopsUpdatable{
     }
 
     @Override
-    public long size() {
+    public int size() {
         return getShops().size();
     }
 
