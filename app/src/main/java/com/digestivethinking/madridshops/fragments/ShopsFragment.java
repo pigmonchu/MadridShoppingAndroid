@@ -1,6 +1,7 @@
 package com.digestivethinking.madridshops.fragments;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -17,8 +18,12 @@ import com.digestivethinking.madridshops.domain.model.Shop;
 import com.digestivethinking.madridshops.domain.model.Shops;
 import com.digestivethinking.madridshops.views.OnElementClick;
 
+import java.lang.ref.WeakReference;
+
 
 public class ShopsFragment extends Fragment {
+
+    private OnElementClick<Shop> listener;
 
     private RecyclerView shopsRecyclerView;
     private ShopsAdapter adapter;
@@ -52,8 +57,17 @@ public class ShopsFragment extends Fragment {
             @Override
             public void clickedOn(@NonNull Shop shop, int position) {
                 Log.d("Click", shop.getName());
+
+                if (listener != null) {
+                    ShopsFragment.this.listener.clickedOn(shop, position);
+                }
             }
         });
+    }
+
+    public void setOnElementClickListener(OnElementClick<Shop> listener) {
+        this.listener = listener;
+
     }
 
 }
