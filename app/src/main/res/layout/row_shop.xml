@@ -29,9 +29,17 @@
         tools:text="Horario de apertura"
         android:id="@+id/row_shop__opening_time"
         style="@style/row_shop__opening_time" />
-    <ImageView
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/row_shop__icon_shop"
+        style="@style/row_shop__icon_shop"
+        tools:src="@android:drawable/alert_dark_frame"
+        />
+
+    <!--ImageView
         tools:src="@android:drawable/alert_dark_frame"
         android:id="@+id/row_shop__icon_shop"
-        style="@style/row_shop__icon_shop" />
+        style="@style/row_shop__icon_shop"
+        /-->
 
 </RelativeLayout>

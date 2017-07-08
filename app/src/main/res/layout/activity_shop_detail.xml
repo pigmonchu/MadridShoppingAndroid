@@ -1,9 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.digestivethinking.madridshops.activities.ShopDetailActivity">
+    tools:context="com.digestivethinking.madridshops.activities.ShopDetailActivity"
+    android:id="@+id/activity_shop_detail">
 
-</android.support.constraint.ConstraintLayout>
+    <ScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/activity_shop_detail__image"
+                tools:src="@drawable/icono_blanco"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                >
+            </ImageView>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/activity_shop_detail__logo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                tools:src="@drawable/online_shop"
+                android:layout_marginTop="60dp"
+                android:layout_centerHorizontal="true"
+            />
+
+            <TextView
+                android:id="@+id/activity_shop_detail__name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Kortefiel"
+                android:textSize="28sp"
+                android:layout_below="@id/activity_shop_detail__image"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="0dp"
+                />
+
+            <TextView
+                android:id="@+id/activity_shop_detail__opening_hours"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/activity_shop_detail__name"
+                tools:text="9:00 a 22:00"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="0dp"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+
+                />
+            <TextView
+                android:id="@+id/activity_shop_detail__description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Description"
+                android:layout_below="@id/activity_shop_detail__opening_hours"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="0dp"
+                android:textColor="@color/colorPrimary"
+                />
+            <ImageView
+                android:id="@+id/activity_shop_detail__map"
+                tools:src="@drawable/static_map"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/activity_shop_detail__description"
+                android:layout_marginTop="16dp"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop"
+                />
+
+            <TextView
+                android:id="@+id/activity_shop_detail__address"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                tools:text="Address"
+                android:layout_alignBottom="@id/activity_shop_detail__map"
+                android:layout_margin="8dp"
+                android:background="@drawable/rounded_rectangle"
+                android:textColor="@android:color/white"
+                android:padding="4dp"
+
+                />
+
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
