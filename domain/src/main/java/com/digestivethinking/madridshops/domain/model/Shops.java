@@ -1,16 +1,32 @@
 package com.digestivethinking.madridshops.domain.model;
 
+import android.support.annotation.NonNull;
+
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Shops implements ShopsIterable, ShopsUpdatable{
 
-    List<Shop> shops;
+    private List<Shop> shops;
+
+    public static Shops from(@NonNull final List<Shop> shopList) {
+        Shops shops = new Shops();
+
+        if (shopList == null) {
+            return shops;
+        }
+
+        for (final Shop shop : shopList) {
+            shops.add(shop);
+        }
+        return shops;
+    }
 
     public Shops() {
 
     }
+
 
     private List<Shop> getShops() {
         if (shops == null) {
@@ -55,6 +71,5 @@ public class Shops implements ShopsIterable, ShopsUpdatable{
     public void update(Shop newShop, long index) {
         getShops().set((int)index, newShop);
     }
-
 
 }
