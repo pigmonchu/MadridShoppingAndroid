@@ -24,10 +24,10 @@ public class ShopRowViewHolder extends RecyclerView.ViewHolder{
     public ShopRowViewHolder(View rowShop) {
         super(rowShop);
 
-        shopNameTextView = rowShop.findViewById(R.id.row_shop__shop_name);
-        shopOpeningTimeTextView = rowShop.findViewById(R.id.row_shop__opening_time);
-        backgroundShopImageView = rowShop.findViewById(R.id.row_shop__background_shop);
-        iconShopImageView = rowShop.findViewById(R.id.row_shop__icon_shop);
+        shopNameTextView = (TextView) rowShop.findViewById(R.id.row_shop__shop_name);
+        shopOpeningTimeTextView = (TextView) rowShop.findViewById(R.id.row_shop__opening_time);
+        backgroundShopImageView = (ImageView) rowShop.findViewById(R.id.row_shop__background_shop);
+        iconShopImageView = (ImageView) rowShop.findViewById(R.id.row_shop__icon_shop);
 
         this.context = new WeakReference<>(rowShop.getContext());
 

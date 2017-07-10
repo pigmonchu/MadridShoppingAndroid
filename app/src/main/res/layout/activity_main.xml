@@ -12,22 +12,46 @@
     tools:context="com.digestivethinking.madridshops.activities.MainActivity">
 
     <Button
-        android:id="@+id/activity_main__shops_button"
-        android:text="@string/activity_main__shops_button_text"
+        android:id="@+id/un_boton"
+        android:text="@string/activity_main__clear_cache_text"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         style="@style/activity_main_button_style"
-        android:layout_above="@+id/activity_main__activities_button"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="22dp"/>
+    <!--android:layout_above="@id/activity_main__clear_cache_button"-->
+
+
     <Button
         android:id="@+id/activity_main__activities_button"
         android:text="@string/activity_main__activities_button_text"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
+        style="@style/activity_main_button_style"
+        android:layout_alignParentStart="true"
+        android:layout_above="@id/un_boton"
+        />
+
+    <Button
+        android:id="@+id/activity_main__shops_button"
+        android:text="@string/activity_main__shops_button_text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        style="@style/activity_main_button_style"
+        android:layout_above="@id/activity_main__activities_button"
+        android:layout_alignParentStart="true"/>
+
+
+    <!--Button
+        android:id="@+id/activity_main__clear_cache_button"
+        android:text="@string/activity_main__clear_cache_text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:layout_marginBottom="22dp"
         style="@style/activity_main_button_style"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"/-->
 
     <ImageView
         android:id="@+id/activity_main__logo"

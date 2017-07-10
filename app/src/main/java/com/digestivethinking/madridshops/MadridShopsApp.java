@@ -24,24 +24,6 @@ public class MadridShopsApp extends MultiDexApplication {
     public void onCreate() {
         super.onCreate();
 
-        // TODO: quitar la aberración que sigue
-
-        NetworkManager manager = new GetAllShopsManagerImplementation(getApplicationContext());
-
-        GetAllShopsInteractor getAllShopsInteractor = new GetAllShopsInteractorImplementation(manager);
-
-        getAllShopsInteractor.execute(new GetAllShopsInteractorCompletion() {
-            @Override
-            public void completion(@NonNull Shops shops) {
-
-            }
-        }, new InteractorErrorCompletion() {
-            @Override
-            public void error(String errorDescription) {
-
-            }
-        });
-
         Log.v(APP_NAME, "App starting");
 
 //        Picasso.with(getApplicationContext()).setLoggingEnabled(true);
